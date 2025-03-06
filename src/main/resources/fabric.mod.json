@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "ovaqreborn-plus",
+  "version": "${version}",
+  "name": "OvaqReborn+",
+  "description": "Created BY TEAM 2P2FJP [Based by Shoreline] 2B2TJP UtilityMod",
+  "Copyright": "Copyright © 2P2FJP Development Team 2024 All Rights Reserved",
+  "authors": [
+    "Devs",
+    "Rom(Nelf)",
+    "ハイピの廃人",
+    "NaaNaa",
+    "Designers",
+    "ダチョエナガ",
+    "ちくわ(ゴミカス）",
+    "法律関係",
+    "ダチョエナガ(Google内定)"
+  ],
+  "icon": "logo.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "net.shoreline.client.OvaqRebornMod"
+    ]
+  },
+  "accessWidener": "ovaqreborn.accesswidener",
+  "mixins": [
+    "mixins.ovaqreborn.json"
+  ],
+  "depends": {
+    "java": ">=17",
+    "fabricloader": ">=0.14.17",
+    "minecraft": "1.20.4"
+  }
+}
