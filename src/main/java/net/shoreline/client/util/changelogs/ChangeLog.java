@@ -13,7 +13,7 @@ public class ChangeLog {
     static {
         changeLogs.add(new ChangeLogEntry(ChangeType.ADD, "ircとかにwebhookを追加した"));
         changeLogs.add(new ChangeLogEntry((ChangeType.ADD),"PhaseにJPModeを追加中"));
-        changeLogs.add(new ChangeLogEntry(ChangeType.IMPROVE, "知らん"));
+        changeLogs.add(new ChangeLogEntry(ChangeType.IMPROVE, "座標流出moduleを修正"));
     }
 
     public static List<ChangeLogEntry> getChangeLogs() {

@@ -40,6 +40,6 @@ public class AntiCoordLeakModule extends ConcurrentModule {
         if (message.contains("/") || message.contains(".") || message.contains("#")) {
             return false;
         }
-            return message.matches(".*(?:-?\\d{1,6}\\s*[,\\s]\\s*){2}-?\\d{1,6}.*"); //ここで座標かどうか判断する　
+        return message.matches(".*(?:-?\\d{1,6}\\s*[,\\s]\\s*){2}-?\\d{1,6}.*");
     }
 }

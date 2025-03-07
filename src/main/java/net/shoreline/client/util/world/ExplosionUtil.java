@@ -23,8 +23,9 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.BlockView;
 import net.shoreline.client.util.Globals;
 //最高級Util
-public class ExplosionUtil
-        implements Globals {
+public class ExplosionUtil implements Globals {
+  /*
+
     public static double getDamageTo(Entity entity, Vec3d explosion) {
         return ExplosionUtil.getDamageTo(entity, explosion, false);
     }
@@ -177,5 +178,6 @@ public class ExplosionUtil
     }
 
     public record ExposureRaycastContext(Vec3d start, Vec3d end) {
-    }
+    }*/
 }
+
