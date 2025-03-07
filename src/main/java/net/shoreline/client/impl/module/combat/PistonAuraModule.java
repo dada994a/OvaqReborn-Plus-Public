@@ -245,7 +245,7 @@ public class PistonAuraModule extends RotationModule {
         if (isAir(p)) {
             return;
         }
-        Modules.AUTO_MINE.startMining(new AutoMineModule.MiningData(p, Direction.UP, 0.82f));
+       // Modules.AUTO_MINE.startMining(new AutoMineModule.MiningData(p, Direction.UP, 0.82f));
     }
 
     private void test() {
