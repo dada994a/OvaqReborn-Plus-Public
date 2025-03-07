@@ -36,8 +36,8 @@ import java.util.Deque;
 import java.util.List;
 import java.util.PriorityQueue;
 
-public class AutoMinebase
-        extends RotationModule {
+public class AutoMinebase extends RotationModule {
+
     Config<Boolean> multitaskConfig = new BooleanConfig("Multitask", "Allows mining while using items", false);
     Config<Boolean> autoConfig = new BooleanConfig("Auto", "Automatically mines nearby players feet", false);
     Config<Boolean> autoRemineConfig = new BooleanConfig("AutoRemine", "Automatically remines mined blocks", true, () -> this.autoConfig.getValue());
@@ -51,14 +51,14 @@ public class AutoMinebase
     Config<Boolean> grimConfig = new BooleanConfig("Grim", "Uses grim block breaking speeds", false);
     Config<Boolean> instantConfig = new BooleanConfig("Instant", "Instant remines mined blocks", true);
     Config<Color> miningColorConfig = new ColorConfig("Color", "The color for mining outlines", new Color(200, 60, 60,100));
-    private Deque<MiningData> miningQueue = new EvictingQueue<MiningData>(2);
+ //   private Deque<MiningData> miningQueue = new EvictingQueue<MiningData>(2);
     private long lastBreak;
     private boolean manualOverride;
 
     public AutoMinebase() {
         super("AutoMine", "Automatically mines blocks", ModuleCategory.WORLD, 900);
     }
-
+    /*
     @Override
     public String getModuleData() {
         if (!this.miningQueue.isEmpty()) {
@@ -433,5 +433,5 @@ public class AutoMinebase
         public AutoMiningData(BlockPos pos, Direction direction) {
             super(pos, direction);
         }
-    }
+    }*/
 }

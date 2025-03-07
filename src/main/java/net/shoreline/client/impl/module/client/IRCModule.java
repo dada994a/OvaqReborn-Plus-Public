@@ -107,8 +107,8 @@ public class IRCModule extends ToggleModule {
             }
             Formatting nickColor = isDev ? Formatting.LIGHT_PURPLE : Formatting.WHITE;
             if (discordConfig.getValue() && receivediscordConfig.getValue() && nick.equalsIgnoreCase("Server"))
-                ChatUtil.clientSendMessageRaw(Formatting.GRAY + "[" + Formatting.AQUA + "OvaqReborn+" + Formatting.DARK_BLUE + "Discord" + Formatting.GRAY + "] " + nickColor + nick + ": " + text + Formatting.RESET);
-            else ChatUtil.clientSendMessageRaw(Formatting.GRAY + "[" + Formatting.AQUA + "OvaqReborn+" + Formatting.GRAY + "] " + nickColor + nick + ": " + text + Formatting.RESET);
+                ChatUtil.clientSendMessageRaw(Formatting.GRAY + "[" + Formatting.AQUA + "OvaqReborn Plus" + Formatting.DARK_BLUE + "Discord" + Formatting.GRAY + "] " + nickColor + nick + ": " + text + Formatting.RESET);
+            else ChatUtil.clientSendMessageRaw(Formatting.GRAY + "[" + Formatting.AQUA + "OvaqReborn Plus" + Formatting.GRAY + "] " + nickColor + nick + ": " + text + Formatting.RESET);
         }).start();
     }
 }
