@@ -11,8 +11,9 @@ public class ChangeLog {
     private static final List<ChangeLogEntry> changeLogs = new ArrayList<>();
 
     static {
-        changeLogs.add(new ChangeLogEntry(ChangeType.ADD, "色々"));
-        changeLogs.add(new ChangeLogEntry(ChangeType.IMPROVE, "色々"));
+        changeLogs.add(new ChangeLogEntry(ChangeType.ADD, "ircとかにwebhookを追加した"));
+        changeLogs.add(new ChangeLogEntry((ChangeType.ADD),"PhaseにJPModeを追加中"));
+        changeLogs.add(new ChangeLogEntry(ChangeType.IMPROVE, "知らん"));
     }
 
     public static List<ChangeLogEntry> getChangeLogs() {
