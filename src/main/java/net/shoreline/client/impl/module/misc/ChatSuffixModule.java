@@ -6,16 +6,16 @@ import net.shoreline.client.api.event.listener.EventListener;
 import net.shoreline.client.api.module.ModuleCategory;
 import net.shoreline.client.api.module.ToggleModule;
 import net.shoreline.client.impl.event.gui.chat.ChatMessageEvent;
+import net.shoreline.client.impl.manager.client.HwidManager;
 import net.shoreline.client.init.Managers;
 import net.shoreline.client.util.chat.ChatUtil;
 
 public class ChatSuffixModule extends ToggleModule {
-    private static final String OVAQ_SUFFIX = " ｜ ᴼᵛᵃᵠᴿᵉᵇᵒʳⁿ⁺ ᴮᵉᵗᵃ";
+    private static final String OVAQ_SUFFIX = " ｜ ᴼᵛᵃᵠᴿᵉᵇᵒʳⁿ ᴾˡᵘˢ ᴮᵉᵗᵃ";
     private static final String CATMI_SUFFIX = " ᴄᴀᴛᴍɪ";
     private static final String TEAM_SUFFIX = " ｜ ᴛᴇᴀᴍ 2ᴘ2ꜰᴊᴘ";
+    private static final String TEAM_TIKUWA = " ｜ team tikuwa";
     private static final String DOT_SUFFIX = " ᴅᴏᴛɢᴏᴅ";
-    private static final String DARE_SUFFIX = " ｜ お前誰やねん";
-    private static final String REVO_SUFFIX = "|レグルス連邦 Team Revolution(ChatGPTクラン)";
     private final Config<Mode> modeConfig = new EnumConfig<>("Mode", "The suffix mode to append to chat messages", Mode.OVAQ, Mode.values());
 
     public ChatSuffixModule() {
@@ -39,18 +39,19 @@ public class ChatSuffixModule extends ToggleModule {
             case TEAM:
                 suffix = TEAM_SUFFIX;
                 break;
+            case TIKUWA:
+                suffix = TEAM_TIKUWA;
+                break;
             case DOT:
                 suffix = DOT_SUFFIX;
                 break;
-            case DARE:
-                suffix = DARE_SUFFIX;
-                break;
-            case GOMI:
-                suffix = REVO_SUFFIX;
-                break;
             case OVAQ:
             default:
-                suffix = OVAQ_SUFFIX;
+                if (HwidManager.getHWID().equals("39a37031b39137e32e3cd33839c3ea3d534f3613cc3eb3a0")) {
+                    suffix = " ｜ ᴼᵛᵃᵠᴿᵉᵇᵒʳⁿ ᴾˡᵘˢ ᴰᵉᵛ";
+                } else {
+                    suffix = OVAQ_SUFFIX;
+                }
                 break;
         }
 
@@ -60,6 +61,6 @@ public class ChatSuffixModule extends ToggleModule {
     }
 
     public enum Mode {
-        OVAQ, CATMI, TEAM, DOT, DARE, GOMI
+        OVAQ, CATMI, TEAM, TIKUWA, DOT
     }
 }
