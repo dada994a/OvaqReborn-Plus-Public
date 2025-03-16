@@ -7,6 +7,7 @@ import net.shoreline.client.api.file.ClientConfiguration;
 import net.shoreline.client.api.render.shader.ShadersPool;
 import net.shoreline.client.impl.manager.client.AntiDumpManager;
 import net.shoreline.client.impl.manager.client.DiscordManager;
+import net.shoreline.client.impl.manager.client.UpdateChecker;
 import net.shoreline.client.impl.module.client.IRCModule;
 import net.shoreline.client.init.Managers;
 import net.shoreline.client.init.Modules;
@@ -49,7 +50,9 @@ public class OvaqReborn {
         Moduletester.moduletest();
         info("HwidAuth successful!");
 
-        //下のこれ動かなかったらごめん
+        UpdateChecker.checkUpdate();
+        info("Update Checking");
+
         info("preInit starting ...");
 
         EXECUTOR = Executors.newFixedThreadPool(1);
