@@ -13,7 +13,8 @@ public class UpdateChecker {
 
     public static void checkUpdate() {
         try {
-            URL url = new URL("https://gist.githubusercontent.com/dada994a/be4892ca0353b822b753cb09d318e7fb/raw/bd696b63552891b581fc1e4424c86848ce9f9e08/Ver.txt");
+            //URL url = new URL("https://gist.githubusercontent.com/dada994a/be4892ca0353b822b753cb09d318e7fb/raw/bd696b63552891b581fc1e4424c86848ce9f9e08/Ver.txt");
+            URL url = new URL("https://pastebin.com/raw/tcz1Jk2x");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
 
