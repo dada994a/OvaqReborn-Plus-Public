@@ -10,26 +10,28 @@ import java.net.URL;
  * @author OvaqReborn
  * @since 1.0
  */
+
 public class UIDManager {
     public static String getUID() {
-        String a = HwidManager.getHWID();
-        if (a.equals("Error")) {
+        String hwid = HwidManager.getHWID();
+        if (hwid.equals("Error")) {
             return "-1";
         }
         try {
             URL url = new URL("https://pastebin.com/raw/PnxMiXTB");
             BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
             String line;
-            int i = 1;
             while ((line = reader.readLine()) != null) {
-                if (line.contains(a)) {
-                    return String.valueOf(i);
+                if (line.contains(hwid)) {
+                    String[] parts = line.split("-");
+                    if (parts.length > 1) {
+                        return parts[1];
+                    }
                 }
-                i++;
             }
             reader.close();
         } catch (Exception e) {
-            OvaqReborn.LOGGER.error("error i: {}", e.getMessage());
+            OvaqReborn.LOGGER.error("error: {}", e.getMessage());
         }
 
         return "-1";
