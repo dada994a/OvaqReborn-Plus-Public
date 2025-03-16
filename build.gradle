@@ -126,10 +126,10 @@ def execute(String cmd) {
     }
 }
 
-/*
+
 task copyDeps(type: Copy) {
     from configurations.runtimeClasspath
     into 'libs'
     }
 tasks.build.dependsOn copyDeps
- */
+
