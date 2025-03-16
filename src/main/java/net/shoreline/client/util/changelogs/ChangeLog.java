@@ -11,9 +11,8 @@ public class ChangeLog {
     private static final List<ChangeLogEntry> changeLogs = new ArrayList<>();
 
     static {
-        changeLogs.add(new ChangeLogEntry(ChangeType.ADD, "ircとかにwebhookを追加した"));
-        changeLogs.add(new ChangeLogEntry(ChangeType.ADD, "ChatSuffixにTeamTikuwaを追加"));
-        changeLogs.add(new ChangeLogEntry(ChangeType.IMPROVE, "座標流出moduleを修正"));
+        changeLogs.add(new ChangeLogEntry(ChangeType.ADD, "ちくわモーメント"));
+        changeLogs.add(new ChangeLogEntry(ChangeType.IMPROVE, "ちくわモーメント"));
     }
 
     public static List<ChangeLogEntry> getChangeLogs() {
