@@ -4,7 +4,7 @@ import net.minecraft.text.CharacterVisitor;
 import net.minecraft.text.Style;
 import net.minecraft.text.TextVisitFactory;
 import net.minecraft.util.Formatting;
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 import net.shoreline.client.impl.event.text.TextVisitEvent;
 import net.shoreline.client.init.Modules;
 import net.shoreline.client.util.Globals;
@@ -44,7 +44,7 @@ public abstract class MixinTextVisitFactory implements Globals {
             return text;
         }
         final TextVisitEvent textVisitEvent = new TextVisitEvent(text);
-        OvaqReborn.EVENT_HANDLER.dispatch(textVisitEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(textVisitEvent);
         if (textVisitEvent.isCanceled()) {
             return textVisitEvent.getText();
         }

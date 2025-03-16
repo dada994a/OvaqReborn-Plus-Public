@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 public class CreditMenuHelper extends Screen {

@@ -6,15 +6,13 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityPose;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.Hand;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.event.GameEvent;
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 import net.shoreline.client.impl.event.camera.EntityCameraPositionEvent;
 import net.shoreline.client.impl.event.entity.*;
 import net.shoreline.client.impl.event.entity.decoration.TeamColorEvent;
@@ -76,7 +74,7 @@ public abstract class MixinEntity implements Globals {
     public void hookGetCameraPosVec(final float tickDelta, final CallbackInfoReturnable<Vec3d> info) {
         final EntityRotationVectorEvent event = new EntityRotationVectorEvent(
                 tickDelta, (Entity) (Object) this, info.getReturnValue());
-        OvaqReborn.EVENT_HANDLER.dispatch(event);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(event);
         info.setReturnValue(event.getPosition());
     }
 
@@ -86,7 +84,7 @@ public abstract class MixinEntity implements Globals {
             return;
         }
         // StepEvent stepEvent = new StepEvent(cir.getReturnValue().y - movement.y);
-        // OvaqReborn.EVENT_HANDLER.dispatch(stepEvent);
+        // OvaqRebornPlus.EVENT_HANDLER.dispatch(stepEvent);
     }
 
     @Inject(method = "slowMovement", at = @At(value = "HEAD"), cancellable = true)
@@ -95,7 +93,7 @@ public abstract class MixinEntity implements Globals {
             return;
         }
         SlowMovementEvent slowMovementEvent = new SlowMovementEvent(state);
-        OvaqReborn.EVENT_HANDLER.dispatch(slowMovementEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(slowMovementEvent);
         if (slowMovementEvent.isCanceled()) {
             ci.cancel();
         }
@@ -110,7 +108,7 @@ public abstract class MixinEntity implements Globals {
         }
         VelocityMultiplierEvent velocityMultiplierEvent =
                 new VelocityMultiplierEvent(instance);
-        OvaqReborn.EVENT_HANDLER.dispatch(velocityMultiplierEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(velocityMultiplierEvent);
         if (velocityMultiplierEvent.isCanceled()) {
             return Blocks.DIRT;
         }
@@ -121,7 +119,7 @@ public abstract class MixinEntity implements Globals {
     private void hookUpdateVelocity(float speed, Vec3d movementInput, CallbackInfo ci) {
         if ((Object) this == mc.player) {
             UpdateVelocityEvent updateVelocityEvent = new UpdateVelocityEvent(movementInput, speed, mc.player.getYaw(), movementInputToVelocity(movementInput, speed, mc.player.getYaw()));
-            OvaqReborn.EVENT_HANDLER.dispatch(updateVelocityEvent);
+            OvaqRebornPlus.EVENT_HANDLER.dispatch(updateVelocityEvent);
             if (updateVelocityEvent.isCanceled()) {
                 ci.cancel();
                 mc.player.setVelocity(mc.player.getVelocity().add(updateVelocityEvent.getVelocity()));
@@ -132,7 +130,7 @@ public abstract class MixinEntity implements Globals {
     @Inject(method = "pushAwayFrom", at = @At(value = "HEAD"), cancellable = true)
     private void hookPushAwayFrom(Entity entity, CallbackInfo ci) {
         PushEntityEvent pushEntityEvent = new PushEntityEvent((Entity) (Object) this, entity);
-        OvaqReborn.EVENT_HANDLER.dispatch(pushEntityEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(pushEntityEvent);
         if (pushEntityEvent.isCanceled()) {
             ci.cancel();
         }
@@ -143,7 +141,7 @@ public abstract class MixinEntity implements Globals {
     private void hookGetTeamColorValue(CallbackInfoReturnable<Integer> cir) {
         TeamColorEvent teamColorEvent =
                 new TeamColorEvent((Entity) (Object) this);
-        OvaqReborn.EVENT_HANDLER.dispatch(teamColorEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(teamColorEvent);
         if (teamColorEvent.isCanceled()) {
             cir.setReturnValue(teamColorEvent.getColor());
             cir.cancel();
@@ -155,7 +153,7 @@ public abstract class MixinEntity implements Globals {
         if ((Object) this == mc.player) {
             LookDirectionEvent lookDirectionEvent = new LookDirectionEvent(
                     (Entity) (Object) this, cursorDeltaX, cursorDeltaY);
-            OvaqReborn.EVENT_HANDLER.dispatch(lookDirectionEvent);
+            OvaqRebornPlus.EVENT_HANDLER.dispatch(lookDirectionEvent);
             if (lookDirectionEvent.isCanceled()) {
                 ci.cancel();
             }
@@ -165,13 +163,13 @@ public abstract class MixinEntity implements Globals {
     @Inject(method = "emitGameEvent(Lnet/minecraft/world/event/GameEvent;Lnet/minecraft/entity/Entity;)V", at = @At(value = "HEAD"))
     private void hookEmitGameEvent(GameEvent event, Entity entity, CallbackInfo ci) {
         EntityGameEvent entityGameEvent = new EntityGameEvent(event, entity);
-        OvaqReborn.EVENT_HANDLER.dispatch(entityGameEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(entityGameEvent);
     }
 
     @Inject(method = "getCameraPosVec", at = @At("RETURN"), cancellable = true)
     public void hookCameraPositionVec(float tickDelta, CallbackInfoReturnable<Vec3d> cir) {
         EntityCameraPositionEvent cameraPositionEvent = new EntityCameraPositionEvent(cir.getReturnValue(), (Entity) (Object) this, tickDelta);
-        OvaqReborn.EVENT_HANDLER.dispatch(cameraPositionEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(cameraPositionEvent);
         cir.setReturnValue(cameraPositionEvent.getPosition());
     }
 
@@ -192,7 +190,7 @@ public abstract class MixinEntity implements Globals {
     @Inject( at = @At("HEAD"), method = "getFlag", cancellable = true)
     public void getFlag(int flag, CallbackInfoReturnable<Boolean> cir) {
         FlagGetEvent flagGetEvent = new FlagGetEvent((Entity) (Object) this, flag, ((Byte) this.dataTracker.get(FLAGS) & 1 << flag) != 0);
-        OvaqReborn.EVENT_HANDLER.dispatch(flagGetEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(flagGetEvent);
         cir.setReturnValue(flagGetEvent.getReturnValue());
     }
 }

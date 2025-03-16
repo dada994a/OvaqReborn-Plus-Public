@@ -1,15 +1,13 @@
 package net.shoreline.client.mixin.entity.player;
 
-import com.google.common.eventbus.EventBus;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MovementType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 import net.shoreline.client.api.event.DeathEvent;
-import net.shoreline.client.api.event.Event;
 import net.shoreline.client.api.event.EventStage;
 import net.shoreline.client.impl.event.entity.player.PlayerJumpEvent;
 import net.shoreline.client.impl.event.entity.player.PushFluidsEvent;
@@ -43,7 +41,7 @@ public abstract class MixinPlayerEntity extends LivingEntity implements Globals 
     private void onDeath(CallbackInfo info) {
         PlayerEntity player = (PlayerEntity) (Object) this;
         DeathEvent deathEvent = new DeathEvent(player);
-        OvaqReborn.EVENT_HANDLER.dispatch(deathEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(deathEvent);
         if (deathEvent.isCanceled()) {
             info.cancel();
         }
@@ -56,7 +54,7 @@ public abstract class MixinPlayerEntity extends LivingEntity implements Globals 
     private void hookTravelHead(Vec3d movementInput, CallbackInfo ci) {
         TravelEvent travelEvent = new TravelEvent(movementInput);
         travelEvent.setStage(EventStage.PRE);
-        OvaqReborn.EVENT_HANDLER.dispatch(travelEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(travelEvent);
         if (travelEvent.isCanceled()) {
             move(MovementType.SELF, getVelocity());
             ci.cancel();
@@ -72,7 +70,7 @@ public abstract class MixinPlayerEntity extends LivingEntity implements Globals 
     private void hookTravelTail(Vec3d movementInput, CallbackInfo ci) {
         TravelEvent travelEvent = new TravelEvent(movementInput);
         travelEvent.setStage(EventStage.POST);
-        OvaqReborn.EVENT_HANDLER.dispatch(travelEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(travelEvent);
     }
 
     /**
@@ -85,7 +83,7 @@ public abstract class MixinPlayerEntity extends LivingEntity implements Globals 
             return;
         }
         PushFluidsEvent pushFluidsEvent = new PushFluidsEvent();
-        OvaqReborn.EVENT_HANDLER.dispatch(pushFluidsEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(pushFluidsEvent);
         if (pushFluidsEvent.isCanceled()) {
             cir.setReturnValue(false);
             cir.cancel();
@@ -102,7 +100,7 @@ public abstract class MixinPlayerEntity extends LivingEntity implements Globals 
         }
         PlayerJumpEvent playerJumpEvent = new PlayerJumpEvent();
         playerJumpEvent.setStage(EventStage.PRE);
-        OvaqReborn.EVENT_HANDLER.dispatch(playerJumpEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(playerJumpEvent);
         if (playerJumpEvent.isCanceled()) {
             ci.cancel();
         }
@@ -118,6 +116,6 @@ public abstract class MixinPlayerEntity extends LivingEntity implements Globals 
         }
         PlayerJumpEvent playerJumpEvent = new PlayerJumpEvent();
         playerJumpEvent.setStage(EventStage.POST);
-        OvaqReborn.EVENT_HANDLER.dispatch(playerJumpEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(playerJumpEvent);
     }
 }

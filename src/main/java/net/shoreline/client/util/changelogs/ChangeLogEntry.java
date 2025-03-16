@@ -1,7 +1,7 @@
 package net.shoreline.client.util.changelogs;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 public class ChangeLogEntry {

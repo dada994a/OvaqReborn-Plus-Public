@@ -1,7 +1,7 @@
 package net.shoreline.client.api.file;
 
 import com.google.gson.*;
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -38,7 +38,7 @@ public abstract class ConfigFile {
             }
             // create dir error
             catch (IOException e) {
-                OvaqReborn.error("Could not create {} dir", dir);
+                OvaqRebornPlus.error("Could not create {} dir", dir);
                 e.printStackTrace();
             }
         }
@@ -96,7 +96,7 @@ public abstract class ConfigFile {
         try {
             return GSON.fromJson(json, type);
         } catch (JsonSyntaxException e) {
-            OvaqReborn.error("Invalid json syntax!");
+            OvaqRebornPlus.error("Invalid json syntax!");
             e.printStackTrace();
         }
         return null;

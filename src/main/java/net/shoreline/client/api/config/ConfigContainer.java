@@ -3,7 +3,7 @@ package net.shoreline.client.api.config;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 import net.shoreline.client.api.Identifiable;
 import net.shoreline.client.api.config.setting.*;
 import net.shoreline.client.api.macro.Macro;
@@ -84,7 +84,7 @@ public class ConfigContainer implements Identifiable, Serializable<Config<?>>, G
                 Config<?> config = factory.build(field);
                 if (config == null) {
                     // failsafe for debugging purposes
-                    OvaqReborn.error("Value for field {} is null!", field);
+                    OvaqRebornPlus.error("Value for field {} is null!", field);
                     continue;
                 }
                 register(config);
@@ -177,7 +177,7 @@ public class ConfigContainer implements Identifiable, Serializable<Config<?>>, G
                 }
                 // couldn't parse Json value
                 catch (Exception e) {
-                    OvaqReborn.error("Couldn't parse Json for {}!", config.getName());
+                    OvaqRebornPlus.error("Couldn't parse Json for {}!", config.getName());
                     e.printStackTrace();
                 }
             }

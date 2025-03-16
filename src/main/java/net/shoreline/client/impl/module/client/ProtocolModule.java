@@ -6,7 +6,7 @@ import net.shoreline.client.api.module.ModuleCategory;
 import net.shoreline.client.api.module.ToggleModule;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  */
 public class ProtocolModule extends ToggleModule {
     Config<Boolean> crouchFixConfig = new BooleanConfig("CrouchFix", "title", true);

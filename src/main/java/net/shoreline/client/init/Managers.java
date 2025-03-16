@@ -1,6 +1,6 @@
 package net.shoreline.client.init;
 
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 import net.shoreline.client.impl.manager.ModuleManager;
 import net.shoreline.client.impl.manager.anticheat.AntiCheatManager;
 import net.shoreline.client.impl.manager.client.*;
@@ -18,7 +18,7 @@ import net.shoreline.client.impl.manager.world.tick.TickManager;
 import net.shoreline.client.security.Authenticator;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 public class Managers {
@@ -93,11 +93,11 @@ public class Managers {
 
     /**
      * Returns <tt>true</tt> if the Manager instances have been initialized.
-     * This should always return <tt>true</tt> if {@link OvaqReborn#init()} has
+     * This should always return <tt>true</tt> if {@link OvaqRebornPlus#init()} has
      * finished running.
      *
      * @return <tt>true</tt> if the Manager instances have been initialized
-     * @see OvaqReborn#init()
+     * @see OvaqRebornPlus#init()
      * @see #init()
      * @see #initialized
      */

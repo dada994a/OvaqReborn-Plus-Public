@@ -1,6 +1,6 @@
 package net.shoreline.client.impl.manager;
 
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 import net.shoreline.client.OvaqRebornMod;
 import net.shoreline.client.api.module.Module;
 import net.shoreline.client.impl.module.client.*;
@@ -176,7 +176,7 @@ public class ModuleManager {
         if (OvaqRebornMod.isBaritonePresent()) {
             register(new BaritoneModule());
         }
-        OvaqReborn.info("Registered {} modules!", modules.size());
+        OvaqRebornPlus.info("Registered {} modules!", modules.size());
     }
 
     /**

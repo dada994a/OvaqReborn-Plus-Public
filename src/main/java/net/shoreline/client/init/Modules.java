@@ -1,6 +1,6 @@
 package net.shoreline.client.init;
 
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 import net.shoreline.client.OvaqRebornMod;
 import net.shoreline.client.api.module.ToggleModule;
 import net.shoreline.client.impl.manager.ModuleManager;
@@ -12,7 +12,6 @@ import net.shoreline.client.impl.module.misc.*;
 import net.shoreline.client.impl.module.movement.*;
 import net.shoreline.client.impl.module.render.*;
 import net.shoreline.client.impl.module.world.*;
-import net.shoreline.client.security.Authenticator;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -369,7 +368,7 @@ public class Modules {
     /**
      * Returns <tt>true</tt> if the {@link Module} instances have been
      * initialized. This should always return <tt>true</tt> if
-     * {@link OvaqReborn#init()} has finished running.
+     * {@link OvaqRebornPlus#init()} has finished running.
      *
      * @return <tt>true</tt> if the module instances have been initialized
      * @see #init()

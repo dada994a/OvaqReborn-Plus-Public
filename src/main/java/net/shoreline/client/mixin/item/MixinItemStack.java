@@ -3,7 +3,7 @@ package net.shoreline.client.mixin.item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 import net.shoreline.client.impl.event.item.DurabilityEvent;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -37,11 +37,11 @@ public abstract class MixinItemStack {
     @Inject(method = "<init>(Lnet/minecraft/item/ItemConvertible;I)V", at = @At(
             value = "RETURN"))
     private void hookInitItem(ItemConvertible item, int count, CallbackInfo ci) {
-        if (OvaqReborn.EVENT_HANDLER == null) {
+        if (OvaqRebornPlus.EVENT_HANDLER == null) {
             return;
         }
         DurabilityEvent durabilityEvent = new DurabilityEvent(getDamage());
-        OvaqReborn.EVENT_HANDLER.dispatch(durabilityEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(durabilityEvent);
         if (durabilityEvent.isCanceled()) {
             getOrCreateNbt().putInt("Damage", durabilityEvent.getDamage());
         }
@@ -54,11 +54,11 @@ public abstract class MixinItemStack {
     @Inject(method = "<init>(Lnet/minecraft/nbt/NbtCompound;)V", at = @At(
             value = "RETURN"))
     private void hookInitNbt(NbtCompound nbt, CallbackInfo ci) {
-        if (OvaqReborn.EVENT_HANDLER == null) {
+        if (OvaqRebornPlus.EVENT_HANDLER == null) {
             return;
         }
         DurabilityEvent durabilityEvent = new DurabilityEvent(nbt.getInt("Damage"));
-        OvaqReborn.EVENT_HANDLER.dispatch(durabilityEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(durabilityEvent);
         if (durabilityEvent.isCanceled()) {
             getOrCreateNbt().putInt("Damage", durabilityEvent.getDamage());
         }

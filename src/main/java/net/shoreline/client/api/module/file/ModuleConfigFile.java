@@ -3,7 +3,6 @@ package net.shoreline.client.api.module.file;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import net.shoreline.client.OvaqReborn;
 import net.shoreline.client.api.file.ConfigFile;
 import net.shoreline.client.api.module.Module;
 import net.shoreline.client.init.Managers;
@@ -39,7 +38,7 @@ public class ModuleConfigFile extends ConfigFile {
         }
         // error writing file
         catch (IOException e) {
-             //OvaqReborn.error("Could not save file for {}!", getFilepath());
+             //OvaqRebornPlus.error("Could not save file for {}!", getFilepath());
             e.printStackTrace();
         }
     }
@@ -69,7 +68,7 @@ public class ModuleConfigFile extends ConfigFile {
         }
         // error writing file
         catch (IOException e) {
-            // OvaqReborn.error("Could not read file for {}!", getFilepath());
+            // OvaqRebornPlus.error("Could not read file for {}!", getFilepath());
             e.printStackTrace();
         }
     }

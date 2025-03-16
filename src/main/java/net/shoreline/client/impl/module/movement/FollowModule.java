@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 //SKID BY SHIMEJI
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 public class FollowModule extends ToggleModule {

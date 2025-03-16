@@ -9,7 +9,7 @@ import net.minecraft.item.Items;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.MathHelper;
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 import net.shoreline.client.api.config.Config;
 import net.shoreline.client.api.config.setting.NumberConfig;
 import net.shoreline.client.api.event.listener.EventListener;
@@ -25,7 +25,7 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 public class PistonPushModule extends RotationModule {
@@ -98,7 +98,7 @@ public class PistonPushModule extends RotationModule {
                 placeRedstone(a.activatorPos);
             }
         } catch (Exception e) {
-            OvaqReborn.LOGGER.error("PistonPushModule: {}", e.getMessage());
+            OvaqRebornPlus.LOGGER.error("PistonPushModule: {}", e.getMessage());
         }
     }
 

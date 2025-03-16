@@ -17,7 +17,7 @@ import java.util.Random;
 public class SpammerModule extends ToggleModule {
 
     private Config<Boolean> useRandomMessageConfig = new BooleanConfig("Random", "Appends a random message to your spam", true);
-    private Config<String> spamMessageConfig = new StringConfig("SpamMessage", "The message to spam", "OvaqReborn On Top!");
+    private Config<String> spamMessageConfig = new StringConfig("SpamMessage", "The message to spam", "OvaqRebornPlus On Top!");
     private Config<Float> spamspeedConfig = new NumberConfig<>("SpamSpeed", "Speed of spamming in seconds", 0.0f, 5.0f, 10.0f);
 
     private long lastMessageTime = 0;

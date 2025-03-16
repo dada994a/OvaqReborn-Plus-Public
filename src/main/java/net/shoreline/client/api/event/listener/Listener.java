@@ -1,6 +1,6 @@
 package net.shoreline.client.api.event.listener;
 
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 import net.shoreline.client.api.Invokable;
 import net.shoreline.client.api.event.Event;
 import net.shoreline.client.api.event.handler.EventHandler;
@@ -87,7 +87,7 @@ public class Listener implements Comparable<Listener> {
                 invoker = INVOKE_CACHE.get(method);
             }
         } catch (Throwable e) {
-            OvaqReborn.error("Failed to build invoker for {}!", method.getName());
+            OvaqRebornPlus.error("Failed to build invoker for {}!", method.getName());
             e.printStackTrace();
         }
     }

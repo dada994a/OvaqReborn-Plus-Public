@@ -16,7 +16,7 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.GameMode;
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 import net.shoreline.client.impl.event.network.AttackBlockEvent;
 import net.shoreline.client.impl.event.network.BreakBlockEvent;
 import net.shoreline.client.impl.event.network.InteractBlockEvent;
@@ -60,7 +60,7 @@ public abstract class MixinClientPlayerInteractionManager implements Globals {
         BlockState state = mc.world.getBlockState(pos);
         final AttackBlockEvent attackBlockEvent = new AttackBlockEvent(
                 pos, state, direction);
-        OvaqReborn.EVENT_HANDLER.dispatch(attackBlockEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(attackBlockEvent);
         if (attackBlockEvent.isCanceled()) {
             cir.cancel();
             // cir.setReturnValue(false);
@@ -74,7 +74,7 @@ public abstract class MixinClientPlayerInteractionManager implements Globals {
             cancellable = true)
     private void hookGetReachDistance(CallbackInfoReturnable<Float> cir) {
         final ReachEvent reachEvent = new ReachEvent();
-        OvaqReborn.EVENT_HANDLER.dispatch(reachEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(reachEvent);
         if (reachEvent.isCanceled()) {
             cir.cancel();
             float reach = gameMode.isCreative() ? 5.0f : 4.5f;
@@ -94,7 +94,7 @@ public abstract class MixinClientPlayerInteractionManager implements Globals {
                                    CallbackInfoReturnable<ActionResult> cir) {
         InteractBlockEvent interactBlockEvent = new InteractBlockEvent(
                 player, hand, hitResult);
-        OvaqReborn.EVENT_HANDLER.dispatch(interactBlockEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(interactBlockEvent);
         if (interactBlockEvent.isCanceled()) {
             cir.setReturnValue(ActionResult.SUCCESS);
             cir.cancel();
@@ -108,7 +108,7 @@ public abstract class MixinClientPlayerInteractionManager implements Globals {
     @Inject(method = "breakBlock", at = @At(value = "HEAD"), cancellable = true)
     private void hookBreakBlock(BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
         BreakBlockEvent breakBlockEvent = new BreakBlockEvent(pos);
-        OvaqReborn.EVENT_HANDLER.dispatch(breakBlockEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(breakBlockEvent);
         if (breakBlockEvent.isCanceled()) {
             cir.setReturnValue(false);
             cir.cancel();

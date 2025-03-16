@@ -31,7 +31,7 @@ import net.shoreline.client.mixin.accessor.AccessorWorldRenderer;
 import net.shoreline.client.util.world.BlastResistantBlocks;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 public class BreakHighlightModule extends ToggleModule {

@@ -17,7 +17,7 @@ import net.shoreline.client.util.world.BlastResistantBlocks;
 import java.awt.*;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 public class PhaseESPModule extends ToggleModule {

@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @see ClickGuiModule
  * @since 1.0
  */

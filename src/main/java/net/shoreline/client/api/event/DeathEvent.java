@@ -3,7 +3,7 @@ package net.shoreline.client.api.event;
 import net.minecraft.entity.player.PlayerEntity;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 

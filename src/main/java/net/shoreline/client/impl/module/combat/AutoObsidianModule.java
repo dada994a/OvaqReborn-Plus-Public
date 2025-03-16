@@ -13,7 +13,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3i;
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 import net.shoreline.client.api.config.Config;
 import net.shoreline.client.api.config.setting.BooleanConfig;
 import net.shoreline.client.api.config.setting.NumberConfig;
@@ -26,7 +26,7 @@ import net.shoreline.client.util.math.timer.CacheTimer;
 import net.shoreline.client.util.math.timer.Timer;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  */
 public class AutoObsidianModule extends ObsidianPlacerModule {
     PlayerEntity target = null;
@@ -123,7 +123,7 @@ public class AutoObsidianModule extends ObsidianPlacerModule {
         if (!target.isOnGround()) {
             if (this.height(targetPos) > minYConfig.getValue()) {
                 BlockPos downPos = targetPos.down(2);
-                OvaqReborn.LOGGER.info(this.height(targetPos));
+                OvaqRebornPlus.LOGGER.info(this.height(targetPos));
                 BlockPos nearestBlock =
                         this.findNearestBlockInRange(downPos, maxRange);
                 if (nearestBlock != null && !hasPlaced) {
@@ -135,7 +135,7 @@ public class AutoObsidianModule extends ObsidianPlacerModule {
                     if (isAir(downPos.north())) {
                         positions.add(downPos.north());
                     }
-                    OvaqReborn.LOGGER.info(downPos);
+                    OvaqRebornPlus.LOGGER.info(downPos);
                     hasPlaced = true;
                     return positions;
                 }
@@ -292,7 +292,7 @@ public class AutoObsidianModule extends ObsidianPlacerModule {
             }
         }
         if (!positions.isEmpty()) {
-            OvaqReborn.LOGGER.info(positions);
+            OvaqRebornPlus.LOGGER.info(positions);
             return positions;
         }
         return positions;

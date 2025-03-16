@@ -46,7 +46,7 @@ import net.shoreline.client.util.player.RotationUtil;
 import java.text.DecimalFormat;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 public class SpeedmineModule extends RotationModule {

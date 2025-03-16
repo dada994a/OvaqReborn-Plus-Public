@@ -10,7 +10,7 @@ import net.shoreline.client.api.module.ModuleCategory;
 import java.awt.*;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 public class ColorsModule extends ConcurrentModule {

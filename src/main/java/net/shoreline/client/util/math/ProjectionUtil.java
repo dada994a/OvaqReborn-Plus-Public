@@ -12,7 +12,7 @@ import org.joml.Vector2f;
 import org.joml.Vector3f;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 public class ProjectionUtil implements Globals {

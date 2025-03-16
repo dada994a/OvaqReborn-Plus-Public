@@ -12,7 +12,7 @@ import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 import net.shoreline.client.api.event.EventStage;
 import net.shoreline.client.impl.event.entity.SwingEvent;
 import net.shoreline.client.impl.event.entity.player.PlayerMoveEvent;
@@ -110,11 +110,11 @@ public abstract class MixinClientPlayerEntity extends AbstractClientPlayerEntity
     private void hookSendMovementPackets(CallbackInfo ci) {
         PlayerUpdateEvent playerUpdateEvent = new PlayerUpdateEvent();
         playerUpdateEvent.setStage(EventStage.PRE);
-        OvaqReborn.EVENT_HANDLER.dispatch(playerUpdateEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(playerUpdateEvent);
         // Rotation spoof
         MovementPacketsEvent movementPacketsEvent = new MovementPacketsEvent(mc.player.getX(), mc.player.getY(),
                 mc.player.getZ(), mc.player.getYaw(), mc.player.getPitch(), mc.player.isOnGround());
-        OvaqReborn.EVENT_HANDLER.dispatch(movementPacketsEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(movementPacketsEvent);
         double x = movementPacketsEvent.getX();
         double y = movementPacketsEvent.getY();
         double z = movementPacketsEvent.getZ();
@@ -168,7 +168,7 @@ public abstract class MixinClientPlayerEntity extends AbstractClientPlayerEntity
             }
         }
         playerUpdateEvent.setStage(EventStage.POST);
-        OvaqReborn.EVENT_HANDLER.dispatch(playerUpdateEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(playerUpdateEvent);
     }
 
     /**
@@ -179,7 +179,7 @@ public abstract class MixinClientPlayerEntity extends AbstractClientPlayerEntity
             shift = At.Shift.BEFORE, ordinal = 0))
     private void hookTickPre(CallbackInfo ci) {
         PlayerTickEvent playerTickEvent = new PlayerTickEvent();
-        OvaqReborn.EVENT_HANDLER.dispatch(playerTickEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(playerTickEvent);
         Managers.ROTATION.onUpdate();
     }
 
@@ -194,7 +194,7 @@ public abstract class MixinClientPlayerEntity extends AbstractClientPlayerEntity
             return;
         }
         TickMovementEvent tickMovementEvent = new TickMovementEvent();
-        OvaqReborn.EVENT_HANDLER.dispatch(tickMovementEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(tickMovementEvent);
         if (tickMovementEvent.isCanceled()) {
             for (int i = 0; i < tickMovementEvent.getIterations(); i++) {
                 ticking = true;
@@ -214,7 +214,7 @@ public abstract class MixinClientPlayerEntity extends AbstractClientPlayerEntity
     private void hookTickMovementPost(CallbackInfo ci) {
         MovementSlowdownEvent movementUpdateEvent =
                 new MovementSlowdownEvent(input);
-        OvaqReborn.EVENT_HANDLER.dispatch(movementUpdateEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(movementUpdateEvent);
     }
 
     /**
@@ -227,7 +227,7 @@ public abstract class MixinClientPlayerEntity extends AbstractClientPlayerEntity
                           CallbackInfo ci) {
         final PlayerMoveEvent playerMoveEvent =
                 new PlayerMoveEvent(movementType, movement);
-        OvaqReborn.EVENT_HANDLER.dispatch(playerMoveEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(playerMoveEvent);
         if (playerMoveEvent.isCanceled()) {
             ci.cancel();
             double d = getX();
@@ -246,7 +246,7 @@ public abstract class MixinClientPlayerEntity extends AbstractClientPlayerEntity
             cancellable = true)
     private void onPushOutOfBlocks(double x, double z, CallbackInfo ci) {
         PushOutOfBlocksEvent pushOutOfBlocksEvent = new PushOutOfBlocksEvent();
-        OvaqReborn.EVENT_HANDLER.dispatch(pushOutOfBlocksEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(pushOutOfBlocksEvent);
         if (pushOutOfBlocksEvent.isCanceled()) {
             ci.cancel();
         }
@@ -259,7 +259,7 @@ public abstract class MixinClientPlayerEntity extends AbstractClientPlayerEntity
     @Inject(method = "setCurrentHand", at = @At(value = "HEAD"))
     private void hookSetCurrentHand(Hand hand, CallbackInfo ci) {
         SetCurrentHandEvent setCurrentHandEvent = new SetCurrentHandEvent(hand);
-        OvaqReborn.EVENT_HANDLER.dispatch(setCurrentHandEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(setCurrentHandEvent);
     }
 
     /**
@@ -271,7 +271,7 @@ public abstract class MixinClientPlayerEntity extends AbstractClientPlayerEntity
             ordinal = 3))
     private void hookSetSprinting(ClientPlayerEntity instance, boolean b) {
         final SprintCancelEvent sprintEvent = new SprintCancelEvent();
-        OvaqReborn.EVENT_HANDLER.dispatch(sprintEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(sprintEvent);
         if (sprintEvent.isCanceled()) {
             instance.setSprinting(true);
         } else {
@@ -299,7 +299,7 @@ public abstract class MixinClientPlayerEntity extends AbstractClientPlayerEntity
     private void hookGetMountJumpStrength(CallbackInfoReturnable<Float> cir) {
         MountJumpStrengthEvent mountJumpStrengthEvent =
                 new MountJumpStrengthEvent();
-        OvaqReborn.EVENT_HANDLER.dispatch(mountJumpStrengthEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(mountJumpStrengthEvent);
         if (mountJumpStrengthEvent.isCanceled()) {
             cir.cancel();
             cir.setReturnValue(mountJumpStrengthEvent.getJumpStrength());
@@ -313,7 +313,7 @@ public abstract class MixinClientPlayerEntity extends AbstractClientPlayerEntity
     @Inject(method = "swingHand", at = @At(value = "RETURN"))
     private void hookSwingHand(Hand hand, CallbackInfo ci) {
         SwingEvent swingEvent = new SwingEvent(hand);
-        OvaqReborn.EVENT_HANDLER.dispatch(swingEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(swingEvent);
     }
 
     @Override

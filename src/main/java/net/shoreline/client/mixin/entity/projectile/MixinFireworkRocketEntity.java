@@ -4,7 +4,7 @@ import net.minecraft.entity.projectile.FireworkRocketEntity;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 import net.shoreline.client.impl.event.entity.projectile.RemoveFireworkEvent;
 import net.shoreline.client.util.Globals;
 import org.spongepowered.asm.mixin.Mixin;
@@ -31,7 +31,7 @@ public class MixinFireworkRocketEntity implements Globals {
     private void hookTickPre(CallbackInfo ci) {
         FireworkRocketEntity rocketEntity = ((FireworkRocketEntity) (Object) this);
         RemoveFireworkEvent removeFireworkEvent = new RemoveFireworkEvent(rocketEntity);
-        OvaqReborn.EVENT_HANDLER.dispatch(removeFireworkEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(removeFireworkEvent);
         if (removeFireworkEvent.isCanceled()) {
             ci.cancel();
             if (life == 0 && !rocketEntity.isSilent()) {

@@ -34,7 +34,7 @@ import net.shoreline.client.util.string.EnumFormatter;
 import java.text.DecimalFormat;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 public class VelocityModule extends ToggleModule {

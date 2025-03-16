@@ -1,13 +1,12 @@
 package net.shoreline.client.mixin.render;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import net.minecraft.client.gl.PostEffectProcessor;
 import net.minecraft.client.render.*;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 import net.shoreline.client.api.event.Render3DEvent;
 import net.shoreline.client.api.render.RenderBuffers;
 import net.shoreline.client.impl.event.PerspectiveEvent;
@@ -57,9 +56,9 @@ public class MixinWorldRenderer implements Globals {
 
         final RenderWorldEvent renderWorldEvent =
                 new RenderWorldEvent(matrices, tickDelta);
-        OvaqReborn.EVENT_HANDLER.dispatch(renderWorldEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(renderWorldEvent);
 
-        OvaqReborn.EVENT_HANDLER.dispatch(new RenderWorldEvent(matrices, tickDelta));
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(new RenderWorldEvent(matrices, tickDelta));
 
         RenderBuffers.postRender();
     }
@@ -72,7 +71,7 @@ public class MixinWorldRenderer implements Globals {
     private void hookRenderWorldBorder(Camera camera, CallbackInfo ci) {
         RenderWorldBorderEvent renderWorldBorderEvent =
                 new RenderWorldBorderEvent();
-        OvaqReborn.EVENT_HANDLER.dispatch(renderWorldBorderEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(renderWorldBorderEvent);
         if (renderWorldBorderEvent.isCanceled()) {
             ci.cancel();
         }
@@ -81,7 +80,7 @@ public class MixinWorldRenderer implements Globals {
     @Redirect(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/Camera;isThirdPerson()Z"))
     public boolean hookRender(Camera instance) {
         PerspectiveEvent perspectiveEvent = new PerspectiveEvent(instance);
-        OvaqReborn.EVENT_HANDLER.dispatch(perspectiveEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(perspectiveEvent);
 
         if (perspectiveEvent.isCanceled()) {
             return true;
@@ -119,6 +118,6 @@ public class MixinWorldRenderer implements Globals {
                             LightmapTextureManager lightmapTextureManager,
                             Matrix4f positionMatrix, CallbackInfo ci) {
         Render3DEvent render3DEvent = new Render3DEvent(matrices, tickDelta);
-        OvaqReborn.EVENT_HANDLER.dispatch(render3DEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(render3DEvent);
     }
 }

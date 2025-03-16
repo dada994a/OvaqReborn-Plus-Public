@@ -12,7 +12,7 @@ import net.minecraft.util.math.MathHelper;
 import net.shoreline.client.util.Globals;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 public final class PlayerUtil implements Globals

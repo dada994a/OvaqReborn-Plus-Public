@@ -2,7 +2,7 @@ package net.shoreline.client.mixin;
 
 import net.minecraft.client.input.Input;
 import net.minecraft.client.input.KeyboardInput;
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 import net.shoreline.client.api.event.EventStage;
 import net.shoreline.client.impl.event.keyboard.KeyboardTickEvent;
 import org.spongepowered.asm.mixin.Mixin;
@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 @Mixin(KeyboardInput.class)
@@ -22,7 +22,7 @@ public class MixinKeyboardInput {
     {
         KeyboardTickEvent event = new KeyboardTickEvent((Input) (Object) this);
         event.setStage(EventStage.PRE);
-        OvaqReborn.EVENT_HANDLER.dispatch(event);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(event);
         if (event.isCanceled())
         {
             info.cancel();
@@ -39,7 +39,7 @@ public class MixinKeyboardInput {
     private void hookTick$Post(boolean slowDown, float f, CallbackInfo ci) {
         KeyboardTickEvent keyboardTickEvent = new KeyboardTickEvent((Input) (Object) this);
         keyboardTickEvent.setStage(EventStage.POST);
-        OvaqReborn.EVENT_HANDLER.dispatch(keyboardTickEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(keyboardTickEvent);
         if (keyboardTickEvent.isCanceled()) {
             ci.cancel();
         }

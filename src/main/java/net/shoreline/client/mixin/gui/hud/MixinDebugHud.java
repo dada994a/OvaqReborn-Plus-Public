@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @see DebugHud
  * @since 1.0
  */

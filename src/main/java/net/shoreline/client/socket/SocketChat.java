@@ -1,7 +1,7 @@
 package net.shoreline.client.socket;
 
+import net.shoreline.client.OvaqRebornPlus;
 import net.shoreline.client.socket.json.Json;
-import net.shoreline.client.OvaqReborn;
 import net.shoreline.client.socket.exception.SocketNickErrorException;
 import net.shoreline.client.impl.event.network.SocketReceivedPacketEvent;
 import net.shoreline.client.socket.json.JsonObject;
@@ -140,7 +140,7 @@ public class SocketChat extends WebSocketAdapter {
         parser.parse(text, ev -> {
             if (ev.getCallType() == SocketPackets.CHAT) {
                 SocketReceivedPacketEvent socketChatEvent = new SocketReceivedPacketEvent(ev.getNick(), ev.getText());
-                OvaqReborn.EVENT_HANDLER.dispatch(socketChatEvent);
+                OvaqRebornPlus.EVENT_HANDLER.dispatch(socketChatEvent);
             }
         });
     }

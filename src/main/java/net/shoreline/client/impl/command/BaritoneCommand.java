@@ -4,7 +4,7 @@ import baritone.api.command.ICommand;
 import net.shoreline.client.api.command.Command;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 public class BaritoneCommand {

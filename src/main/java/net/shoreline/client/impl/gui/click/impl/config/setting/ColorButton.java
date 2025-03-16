@@ -15,7 +15,7 @@ import net.shoreline.client.util.render.animation.Easing;
 import java.awt.*;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 public class ColorButton extends ConfigButton<Color> {

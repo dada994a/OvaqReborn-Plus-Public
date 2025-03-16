@@ -1,13 +1,13 @@
 package net.shoreline.client.impl.manager.client;
 
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 
@@ -31,7 +31,7 @@ public class UIDManager {
             }
             reader.close();
         } catch (Exception e) {
-            OvaqReborn.LOGGER.error("error: {}", e.getMessage());
+            OvaqRebornPlus.LOGGER.error("error: {}", e.getMessage());
         }
 
         return "-1";

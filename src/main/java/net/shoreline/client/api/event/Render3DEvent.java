@@ -1,7 +1,7 @@
 package net.shoreline.client.api.event;
 import net.minecraft.client.util.math.MatrixStack;
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 

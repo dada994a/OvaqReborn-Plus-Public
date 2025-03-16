@@ -1,7 +1,7 @@
 package net.shoreline.client.impl.gui.click.impl.config;
 
 import net.minecraft.client.gui.DrawContext;
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 import net.shoreline.client.api.config.Config;
 import net.shoreline.client.api.macro.Macro;
 import net.shoreline.client.api.module.Module;
@@ -121,7 +121,7 @@ public class ModuleButton extends Button {
             if (button == GLFW.GLFW_MOUSE_BUTTON_LEFT && module instanceof ToggleModule t) {
                 t.toggle();
                 ToggleGuiEvent toggleGuiEvent = new ToggleGuiEvent(t);
-                OvaqReborn.EVENT_HANDLER.dispatch(toggleGuiEvent);
+                OvaqRebornPlus.EVENT_HANDLER.dispatch(toggleGuiEvent);
             } else if (button == GLFW.GLFW_MOUSE_BUTTON_RIGHT) {
                 open = !open;
                 settingsAnimation.setState(open);

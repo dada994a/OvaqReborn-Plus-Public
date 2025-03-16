@@ -17,7 +17,7 @@ import net.shoreline.client.init.Managers;
 import java.util.ArrayList;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 public class AutoWebModule extends BlockPlacerModule {

@@ -8,7 +8,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.*;
 import net.minecraft.util.shape.VoxelShape;
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 import net.shoreline.client.init.Managers;
 import net.shoreline.client.init.Modules;
 import net.shoreline.client.util.Globals;
@@ -26,7 +26,7 @@ public final class InteractionManager implements Globals
 {
     public InteractionManager()
     {
-        OvaqReborn.EVENT_HANDLER.subscribe(this);
+        OvaqRebornPlus.EVENT_HANDLER.subscribe(this);
     }
 
     public boolean placeBlock(final BlockPos pos,

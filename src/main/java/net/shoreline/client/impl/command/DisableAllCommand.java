@@ -9,7 +9,7 @@ import net.shoreline.client.init.Managers;
 import net.shoreline.client.util.chat.ChatUtil;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 public class DisableAllCommand extends Command {

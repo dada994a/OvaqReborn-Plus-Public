@@ -1,6 +1,6 @@
 package net.shoreline.client.api.file;
 
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 import net.shoreline.client.api.macro.MacroFile;
 import net.shoreline.client.api.module.Module;
 import net.shoreline.client.api.module.file.ModuleConfigFile;
@@ -44,7 +44,7 @@ public class ClientConfiguration implements Globals {
         // will resort to running dir if client does not have access to the 
         // user home dir
         catch (Exception e) {
-            OvaqReborn.error("Could not access home dir, defaulting to running dir");
+            OvaqRebornPlus.error("Could not access home dir, defaulting to running dir");
             e.printStackTrace();
             clientDir = runningDir;
         } finally {
@@ -61,7 +61,7 @@ public class ClientConfiguration implements Globals {
                 }
                 // write error
                 catch (IOException e) {
-                    OvaqReborn.error("Could not create client dir");
+                    OvaqRebornPlus.error("Could not create client dir");
                     e.printStackTrace();
                 }
             }
@@ -72,7 +72,7 @@ public class ClientConfiguration implements Globals {
                 }
                 // write error
                 catch (IOException e) {
-                    OvaqReborn.error("Could not create config dir");
+                    OvaqRebornPlus.error("Could not create config dir");
                     e.printStackTrace();
                 }
             }

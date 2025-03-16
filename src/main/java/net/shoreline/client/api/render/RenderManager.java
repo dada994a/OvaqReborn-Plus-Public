@@ -21,7 +21,7 @@ import static net.shoreline.client.api.render.RenderBuffers.LINES;
 import static net.shoreline.client.api.render.RenderBuffers.QUADS;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 public class RenderManager implements Globals {

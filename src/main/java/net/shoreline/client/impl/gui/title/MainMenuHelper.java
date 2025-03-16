@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 public class MainMenuHelper extends Screen implements Globals {
@@ -47,7 +47,7 @@ public class MainMenuHelper extends Screen implements Globals {
             mc::scheduleStop);
 
     public MainMenuHelper() {
-        super(Text.of("OvaqReborn New MainMenu"));
+        super(Text.of("OvaqRebornPlus New MainMenu"));
         buttons.addAll(Arrays.asList(
                 singleplayer,
                 multiplayer,

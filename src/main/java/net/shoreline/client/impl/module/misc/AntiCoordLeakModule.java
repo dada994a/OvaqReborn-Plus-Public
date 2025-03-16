@@ -5,11 +5,13 @@ import net.shoreline.client.api.config.setting.BooleanConfig;
 import net.shoreline.client.api.event.listener.EventListener;
 import net.shoreline.client.api.module.ConcurrentModule;
 import net.shoreline.client.api.module.ModuleCategory;
+import net.shoreline.client.impl.command.BaritoneCommand;
 import net.shoreline.client.impl.event.gui.chat.ChatMessageEvent;
+import net.shoreline.client.init.Managers;
 import net.shoreline.client.util.chat.ChatUtil;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 public class AntiCoordLeakModule extends ConcurrentModule {
@@ -37,7 +39,8 @@ public class AntiCoordLeakModule extends ConcurrentModule {
     }
 
     private boolean tikuwamoment(String message) {
-        if (message.contains("/") || message.contains(".") || message.contains("#")) {
+        String commandPrefix = Managers.COMMAND.getPrefix();
+        if (message.contains("/") || message.contains(commandPrefix) || message.contains("#")) {
             return false;
         }
         return message.matches(".*(?:-?\\d{1,6}\\s*[,\\s]\\s*){2}-?\\d{1,6}.*");

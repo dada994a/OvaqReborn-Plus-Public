@@ -3,7 +3,7 @@ package net.shoreline.client.impl.manager.network;
 import net.minecraft.client.network.*;
 import net.minecraft.network.listener.ServerPlayPacketListener;
 import net.minecraft.network.packet.Packet;
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 import net.shoreline.client.api.event.listener.EventListener;
 import net.shoreline.client.impl.event.network.DisconnectEvent;
 import net.shoreline.client.impl.imixin.IClientPlayNetworkHandler;
@@ -11,7 +11,6 @@ import net.shoreline.client.mixin.accessor.AccessorClientWorld;
 import net.shoreline.client.util.Globals;
 
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -29,7 +28,7 @@ public class NetworkManager implements Globals {
      *
      */
     public NetworkManager() {
-        OvaqReborn.EVENT_HANDLER.subscribe(this);
+        OvaqRebornPlus.EVENT_HANDLER.subscribe(this);
     }
 
     /**

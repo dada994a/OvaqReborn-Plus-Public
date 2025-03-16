@@ -6,7 +6,7 @@ import net.minecraft.util.Formatting;
 import net.shoreline.client.util.Globals;
 
 public class ChatUtil implements Globals {
-    private static final String PREFIX = "§s[OvaqReborn] §f";
+    private static final String PREFIX = "§s[OvaqRebornPlus Plus] §f";
 
     public static void clientSendMessage(String message) {
         if (mc != null && mc.inGameHud != null) {

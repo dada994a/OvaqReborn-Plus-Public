@@ -1,6 +1,6 @@
 package net.shoreline.client.util.math.timer;
 
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 import net.shoreline.client.api.event.EventStage;
 import net.shoreline.client.api.event.listener.EventListener;
 import net.shoreline.client.impl.event.TickEvent;
@@ -21,7 +21,7 @@ public class TickTimer implements Timer {
      */
     public TickTimer() {
         ticks = 0;
-        OvaqReborn.EVENT_HANDLER.subscribe(this);
+        OvaqRebornPlus.EVENT_HANDLER.subscribe(this);
     }
 
     /**

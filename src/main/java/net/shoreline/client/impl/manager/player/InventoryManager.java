@@ -13,7 +13,7 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.screen.slot.SlotActionType;
 import net.minecraft.util.collection.DefaultedList;
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 import net.shoreline.client.api.event.listener.EventListener;
 import net.shoreline.client.impl.event.network.PacketEvent;
 import net.shoreline.client.init.Managers;
@@ -35,7 +35,7 @@ public class InventoryManager implements Globals {
      *
      */
     public InventoryManager() {
-        OvaqReborn.EVENT_HANDLER.subscribe(this);
+        OvaqRebornPlus.EVENT_HANDLER.subscribe(this);
     }
 
     @EventListener

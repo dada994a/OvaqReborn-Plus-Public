@@ -8,7 +8,7 @@ import net.shoreline.client.impl.manager.client.UIDManager;
 /**
  * Fabric {@link ModInitializer}.
  *
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 public class OvaqRebornMod implements ClientModInitializer {
@@ -24,7 +24,7 @@ public class OvaqRebornMod implements ClientModInitializer {
      */
     @Override
     public void onInitializeClient() {
-        OvaqReborn.init();
+        OvaqRebornPlus.init();
     }
 
     public static boolean isBaritonePresent() {

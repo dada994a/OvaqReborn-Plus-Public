@@ -5,7 +5,7 @@ import net.shoreline.client.impl.module.client.IRCModule;
 import net.shoreline.client.init.Modules;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 public class ShutdownHook extends Thread {
@@ -13,7 +13,7 @@ public class ShutdownHook extends Thread {
      *
      */
     public ShutdownHook() {
-        setName("OvaqReborn-ShutdownHook");
+        setName("OvaqRebornPlus-ShutdownHook");
     }
 
     /**
@@ -24,10 +24,10 @@ public class ShutdownHook extends Thread {
      */
     @Override
     public void run() {
-        OvaqReborn.info("Config Saveing…");
-        OvaqReborn.CONFIG.saveClient();
-        OvaqReborn.info("PRC stoping…");
-        OvaqReborn.RPC.stopRPC();
+        OvaqRebornPlus.info("Config Saveing…");
+        OvaqRebornPlus.CONFIG.saveClient();
+        OvaqRebornPlus.info("PRC stoping…");
+        OvaqRebornPlus.RPC.stopRPC();
 
         if (Modules.IRC.isEnabled() && IRCModule.chat.isConnected()) {
             IRCModule.chat.disconnect();

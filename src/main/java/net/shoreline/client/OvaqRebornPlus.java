@@ -20,7 +20,7 @@ import java.net.InetAddress;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-public class OvaqReborn {
+public class OvaqRebornPlus {
     public static Logger LOGGER;
     public static EventHandler EVENT_HANDLER;
     public static ClientConfiguration CONFIG;
@@ -41,7 +41,7 @@ public class OvaqReborn {
     }
 
     public static void init() {
-        LOGGER = LogManager.getLogger("OvaqRebornPlus");
+        LOGGER = LogManager.getLogger("OvaqReborn Plus");
         logAsciiArt();
 
         Authenticator.hwidAuth();
@@ -84,16 +84,15 @@ public class OvaqReborn {
                 e.printStackTrace();
             }
         }
-        info("Made by hypinohaizin,rom(nelf),Naa_Naa");
-        info("OvaqReborn Load is done.");
+        info("OvaqReborn Plus Load is done.");
     }
 
     public static void info(String message) {
-        LOGGER.info(String.format("[OvaqReborn] %s", message));
+        LOGGER.info(String.format("[OvaqReborn Plus] %s", message));
     }
 
     public static void info(String message, Object... params) {
-        LOGGER.info(String.format("[OvaqReborn] %s", message), params);
+        LOGGER.info(String.format("[OvaqReborn Plus] %s", message), params);
     }
 
     public static void info(Identifiable feature, String message) {

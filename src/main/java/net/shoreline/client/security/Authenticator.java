@@ -15,7 +15,7 @@ import java.net.URL;
 import java.util.stream.Collectors;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 

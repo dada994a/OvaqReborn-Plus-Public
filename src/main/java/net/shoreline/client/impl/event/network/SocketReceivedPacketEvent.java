@@ -3,7 +3,7 @@ package net.shoreline.client.impl.event.network;
 import net.shoreline.client.api.event.Event;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  */
 public class SocketReceivedPacketEvent extends Event {
     private final String nick;

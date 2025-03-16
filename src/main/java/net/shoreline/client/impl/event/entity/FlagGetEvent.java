@@ -3,7 +3,7 @@ import net.minecraft.entity.Entity;
 import net.shoreline.client.api.event.Event;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 

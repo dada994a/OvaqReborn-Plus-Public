@@ -16,7 +16,7 @@ import net.shoreline.client.api.module.ToggleModule;
 import net.shoreline.client.impl.event.network.PlayerTickEvent;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 public final class AirInteractModule extends ToggleModule

@@ -1,6 +1,6 @@
 package net.shoreline.client.api.config;
 
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 
 import java.lang.reflect.Field;
 
@@ -37,7 +37,7 @@ public class ConfigFactory {
         }
         // field getter error
         catch (IllegalArgumentException | IllegalAccessException e) {
-            OvaqReborn.error("Failed to build config from field {}!", f.getName());
+            OvaqRebornPlus.error("Failed to build config from field {}!", f.getName());
             e.printStackTrace();
         }
         // failed config creation

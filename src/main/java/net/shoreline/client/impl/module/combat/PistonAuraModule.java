@@ -24,7 +24,7 @@ import net.minecraft.world.entity.EntityLookup;
 import net.minecraft.world.entity.EntityTrackingSection;
 import net.minecraft.world.entity.SectionedEntityCache;
 import net.minecraft.world.entity.SimpleEntityLookup;
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 import net.shoreline.client.api.config.Config;
 import net.shoreline.client.api.config.setting.BooleanConfig;
 import net.shoreline.client.api.config.setting.NumberConfig;
@@ -49,7 +49,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Predicate;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * Beta
  */
 public class PistonAuraModule extends RotationModule {
@@ -141,7 +141,7 @@ public class PistonAuraModule extends RotationModule {
                 if (action != Action.BreakInterfering) {
                     interferePos = null;
                 } else {
-                    OvaqReborn.LOGGER.info("Breaking interfering block at position: {}", interferePos.toString(), new Object[0]);
+                    OvaqRebornPlus.LOGGER.info("Breaking interfering block at position: {}", interferePos.toString(), new Object[0]);
                     mine(interferePos);
                 }
                 if (action == Action.BreakActivator) {
@@ -250,7 +250,7 @@ public class PistonAuraModule extends RotationModule {
 
     private void test() {
         if (rotateConfig.getValue()) {
-            OvaqReborn.LOGGER.info("Rotating to direction: {}", pistonPos.getRotateDir().toString(), new Object[0]);
+            OvaqRebornPlus.LOGGER.info("Rotating to direction: {}", pistonPos.getRotateDir().toString(), new Object[0]);
             setRotation(pistonPos.getRotateDir().asRotation(), 0.0f);
         }
     }
@@ -427,7 +427,7 @@ public class PistonAuraModule extends RotationModule {
                 action = Action.BreakingCrystal;
                 cEntity = e;
             }
-            OvaqReborn.LOGGER.warn("Couldn't find a piston pos on level {}", i, new Object[0]);
+            OvaqRebornPlus.LOGGER.warn("Couldn't find a piston pos on level {}", i, new Object[0]);
             if (i != 3) continue;
             if (mineConfig.getValue()) {
                 for (int j = 1; j <= 3; ++j) {

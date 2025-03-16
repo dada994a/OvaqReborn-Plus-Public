@@ -4,7 +4,7 @@ import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 import net.shoreline.client.api.event.EventStage;
 import net.shoreline.client.api.event.listener.EventListener;
 import net.shoreline.client.api.render.Interpolation;
@@ -45,7 +45,7 @@ public class RotationManager implements Globals {
      *
      */
     public RotationManager() {
-        OvaqReborn.EVENT_HANDLER.subscribe(this);
+        OvaqRebornPlus.EVENT_HANDLER.subscribe(this);
     }
 
     @EventListener

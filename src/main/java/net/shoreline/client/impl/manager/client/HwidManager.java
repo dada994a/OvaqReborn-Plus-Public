@@ -5,7 +5,7 @@ import java.security.MessageDigest;
 import java.nio.charset.StandardCharsets;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 public class HwidManager {

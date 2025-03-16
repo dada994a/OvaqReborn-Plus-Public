@@ -1,6 +1,6 @@
 package net.shoreline.client.api.config.setting;
 
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 import net.shoreline.client.api.config.ConfigContainer;
 import net.shoreline.client.api.module.ToggleModule;
 import net.shoreline.client.util.render.animation.Animation;
@@ -26,9 +26,9 @@ public class ToggleConfig extends BooleanConfig {
             Animation anim = toggle.getAnimation();
             anim.setState(val);
             if (val) {
-                OvaqReborn.EVENT_HANDLER.subscribe(toggle);
+                OvaqRebornPlus.EVENT_HANDLER.subscribe(toggle);
             } else {
-                OvaqReborn.EVENT_HANDLER.unsubscribe(toggle);
+                OvaqRebornPlus.EVENT_HANDLER.unsubscribe(toggle);
             }
         }
     }

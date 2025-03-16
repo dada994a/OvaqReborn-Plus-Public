@@ -3,7 +3,7 @@ package net.shoreline.client.mixin.render;
 import net.minecraft.client.render.Camera;
 import net.minecraft.client.render.CameraSubmersionType;
 import net.minecraft.entity.Entity;
-import net.shoreline.client.OvaqReborn;
+import net.shoreline.client.OvaqRebornPlus;
 import net.shoreline.client.impl.event.camera.CameraPositionEvent;
 import net.shoreline.client.impl.event.camera.CameraRotationEvent;
 import net.shoreline.client.impl.event.gui.hud.RenderOverlayEvent;
@@ -46,7 +46,7 @@ public abstract class MixinCamera {
     private void hookGetSubmersionType(CallbackInfoReturnable<CameraSubmersionType> cir) {
         RenderOverlayEvent.Water renderOverlayEvent =
                 new RenderOverlayEvent.Water(null);
-        OvaqReborn.EVENT_HANDLER.dispatch(renderOverlayEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(renderOverlayEvent);
         if (renderOverlayEvent.isCanceled()) {
             cir.setReturnValue(CameraSubmersionType.NONE);
             cir.cancel();
@@ -62,7 +62,7 @@ public abstract class MixinCamera {
                                  CallbackInfoReturnable<Double> cir) {
         CameraClipEvent cameraClipEvent =
                 new CameraClipEvent(desiredCameraDistance);
-        OvaqReborn.EVENT_HANDLER.dispatch(cameraClipEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(cameraClipEvent);
         if (cameraClipEvent.isCanceled()) {
             cir.setReturnValue(cameraClipEvent.getDistance());
             cir.cancel();
@@ -72,7 +72,7 @@ public abstract class MixinCamera {
     @Redirect(method = "update", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/Camera;setPos(DDD)V"))
     private void hookUpdatePosition(Camera instance, double x, double y, double z) {
         CameraPositionEvent cameraPositionEvent = new CameraPositionEvent(x, y, z, lastTickDelta);
-        OvaqReborn.EVENT_HANDLER.dispatch(cameraPositionEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(cameraPositionEvent);
         setPos(cameraPositionEvent.getX(), cameraPositionEvent.getY(), cameraPositionEvent.getZ());
 
     }
@@ -80,7 +80,7 @@ public abstract class MixinCamera {
     @Redirect(method = "update", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/Camera;setRotation(FF)V"))
     private void hookUpdateRotation(Camera instance, float yaw, float pitch) {
         CameraRotationEvent cameraRotationEvent = new CameraRotationEvent(yaw, pitch, lastTickDelta);
-        OvaqReborn.EVENT_HANDLER.dispatch(cameraRotationEvent);
+        OvaqRebornPlus.EVENT_HANDLER.dispatch(cameraRotationEvent);
         setRotation(cameraRotationEvent.getYaw(), cameraRotationEvent.getPitch());
     }
 

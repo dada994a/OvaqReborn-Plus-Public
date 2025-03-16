@@ -22,7 +22,7 @@ import net.shoreline.client.util.world.EndCrystalUtil;
 import java.util.List;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 public final class OffHandModule extends ToggleModule {

@@ -11,7 +11,7 @@ import org.joml.Vector3f;
 import java.awt.*;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 public class VertexUtil {

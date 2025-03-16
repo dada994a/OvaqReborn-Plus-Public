@@ -6,7 +6,7 @@ import net.minecraft.util.Identifier;
 import net.shoreline.client.util.render.shaders.GlProgram;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 public class RoundShader extends GlProgram {

@@ -10,7 +10,7 @@ import net.shoreline.client.api.event.EventDispatcher;
 import net.shoreline.client.api.event.listener.EventListener;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 

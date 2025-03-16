@@ -1,7 +1,7 @@
 package net.shoreline.client.util.button;
 
 /**
- * @author OvaqReborn
+ * @author OvaqRebornPlus
  * @since 1.0
  */
 public abstract class AbstractButton implements Button {
