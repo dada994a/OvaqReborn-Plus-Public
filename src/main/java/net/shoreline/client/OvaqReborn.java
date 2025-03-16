@@ -5,7 +5,6 @@ import net.shoreline.client.api.event.handler.EventBus;
 import net.shoreline.client.api.event.handler.EventHandler;
 import net.shoreline.client.api.file.ClientConfiguration;
 import net.shoreline.client.api.render.shader.ShadersPool;
-import net.shoreline.client.impl.manager.client.AntiDumpManager;
 import net.shoreline.client.impl.manager.client.DiscordManager;
 import net.shoreline.client.impl.manager.client.UpdateChecker;
 import net.shoreline.client.impl.module.client.IRCModule;
@@ -27,7 +26,6 @@ public class OvaqReborn {
     public static ClientConfiguration CONFIG;
     public static DiscordManager RPC;
     public static ShutdownHook SHUTDOWN;
-    public static AntiDumpManager ANTIDUMP;
     public static Executor EXECUTOR;
 
     public static void logAsciiArt() {
@@ -51,7 +49,7 @@ public class OvaqReborn {
         info("HwidAuth successful!");
 
         UpdateChecker.checkUpdate();
-        info("Update Checking");
+        info("Update Checking ...");
 
         info("preInit starting ...");
 

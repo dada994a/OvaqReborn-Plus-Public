@@ -11,8 +11,8 @@ public class ChangeLog {
     private static final List<ChangeLogEntry> changeLogs = new ArrayList<>();
 
     static {
-        changeLogs.add(new ChangeLogEntry(ChangeType.ADD, "ちくわモーメント"));
-        changeLogs.add(new ChangeLogEntry(ChangeType.IMPROVE, "ちくわモーメント"));
+        changeLogs.add(new ChangeLogEntry(ChangeType.ADD, "UpdateCheckerを追加"));
+        changeLogs.add(new ChangeLogEntry(ChangeType.IMPROVE, "IRCに[VIP]などの表示を追加"));
     }
 
     public static List<ChangeLogEntry> getChangeLogs() {
