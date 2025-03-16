@@ -28,10 +28,20 @@ public class IRCModule extends ToggleModule {
             "hypi_JP",
             "YukiC4"
     };
+
+    String[] vips = {
+            "tiku_enaga",
+            "subobjective"
+    };
+
+
     Map<String, String> map = Stream.of(new String[][] {
             { "@hypi", "<@1143899002463588423>"},
-            { "@tikuwa", "<@1260213569723699210>" },
-            { "@dacho", "<@1113048267136176169>" }
+            { "@tikuwa", "<@1293938358489448625>" },
+            { "@dacho", "<@1113048267136176169>" },
+            { "@rom", "<@904534958901723146>" },
+            { "@tako", "<@835135020355420171>" },
+            { "@baka", "<@1094189134194679818>" }
     }).collect(Collectors.toMap(data -> data[0], data -> data[1]));
 
     private String lastMessageId = null;
@@ -105,7 +115,15 @@ public class IRCModule extends ToggleModule {
                     break;
                 }
             }
-            Formatting nickColor = isDev ? Formatting.LIGHT_PURPLE : Formatting.WHITE;
+
+            boolean isVip = false;
+            for (String vip : vips) {
+                if (vip.equalsIgnoreCase(nick)) {
+                    isVip = true;
+                    break;
+                }
+            }
+            Formatting nickColor = isDev ? Formatting.LIGHT_PURPLE : (isVip ? Formatting.GREEN : Formatting.WHITE);
             if (discordConfig.getValue() && receivediscordConfig.getValue() && nick.equalsIgnoreCase("Server"))
                 ChatUtil.clientSendMessageRaw(Formatting.GRAY + "[" + Formatting.AQUA + "OvaqReborn Plus" + Formatting.DARK_BLUE + "Discord" + Formatting.GRAY + "] " + nickColor + nick + ": " + text + Formatting.RESET);
             else ChatUtil.clientSendMessageRaw(Formatting.GRAY + "[" + Formatting.AQUA + "OvaqReborn Plus" + Formatting.GRAY + "] " + nickColor + nick + ": " + text + Formatting.RESET);

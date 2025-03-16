@@ -113,8 +113,7 @@ public class CriticalsModule extends ToggleModule {
                 if (EntityUtil.isVehicle(e)) {
                     if (modeConfig.getValue() == CritMode.PACKET) {
                         for (int i = 0; i < 5; ++i) {
-                            Managers.NETWORK.sendPacket(PlayerInteractEntityC2SPacket.attack(e,
-                                    Managers.POSITION.isSneaking()));
+                            Managers.NETWORK.sendPacket(PlayerInteractEntityC2SPacket.attack(e, Managers.POSITION.isSneaking()));
                             Managers.NETWORK.sendPacket(new HandSwingC2SPacket(Hand.MAIN_HAND));
                         }
                     }
@@ -154,7 +153,7 @@ public class CriticalsModule extends ToggleModule {
                 Managers.NETWORK.sendPacket(new PlayerMoveC2SPacket.PositionAndOnGround(x, y + 3.239e-4 + d, z, false));
             }
             case PACKET -> {
-                Managers.NETWORK.sendPacket(new PlayerMoveC2SPacket.PositionAndOnGround(mc.player.getX(), mc.player.getY() + 0.0005, mc.player.getZ(), false));
+                Managers.NETWORK.sendPacket(new PlayerMoveC2SPacket.PositionAndOnGround(mc.player.getX(), mc.player.getY() + 0.0625, mc.player.getZ(), false));
                 Managers.NETWORK.sendPacket(new PlayerMoveC2SPacket.PositionAndOnGround(mc.player.getX(), mc.player.getY() + 0.0001, mc.player.getZ(), false));
             }
             case PACKET_STRICT -> {

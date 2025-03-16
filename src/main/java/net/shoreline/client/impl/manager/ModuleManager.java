@@ -47,7 +47,6 @@ public class ModuleManager {
                 new AutoBowReleaseModule(),
                 new AutoObsidianModule(),
                 new AutoCrystalModule(),
-                new OldAutoCrystalModule(),
                 new AutoLogModule(),
                 new OffHandModule(),
                 new AutoTrapModule(),

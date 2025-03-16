@@ -43,7 +43,6 @@ public class Modules {
     public static AutoBowReleaseModule AUTO_BOW_RELEASE;
     public static AutoObsidianModule AUTOOBSIDIAN;
     public static AutoCrystalModule AUTO_CRYSTAL;
-    public static OldAutoCrystalModule OLD_AUTO_CRYSTAL;
     public static AutoLogModule AUTO_LOG;
     public static OffHandModule OFFHAND;
     public static AutoTrapModule AUTO_TRAP;
@@ -227,7 +226,6 @@ public class Modules {
             AUTO_BOW_RELEASE = (AutoBowReleaseModule) getRegisteredModule("autobowrelease-module");
             AUTOOBSIDIAN = (AutoObsidianModule) getRegisteredModule("autoobsidian-module");
             AUTO_CRYSTAL = (AutoCrystalModule) getRegisteredModule("autocrystal-module");
-            OLD_AUTO_CRYSTAL = (OldAutoCrystalModule) getRegisteredModule("oldautocrystal-module");
             AUTO_LOG = (AutoLogModule) getRegisteredModule("autolog-module");
             OFFHAND = (OffHandModule) getRegisteredModule("offhand-module");
             AUTO_TRAP = (AutoTrapModule) getRegisteredModule("autotrap-module");

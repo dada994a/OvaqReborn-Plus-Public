@@ -38,6 +38,7 @@ import java.util.PriorityQueue;
 
 public class AutoMinebase extends RotationModule {
 
+
     Config<Boolean> multitaskConfig = new BooleanConfig("Multitask", "Allows mining while using items", false);
     Config<Boolean> autoConfig = new BooleanConfig("Auto", "Automatically mines nearby players feet", false);
     Config<Boolean> autoRemineConfig = new BooleanConfig("AutoRemine", "Automatically remines mined blocks", true, () -> this.autoConfig.getValue());

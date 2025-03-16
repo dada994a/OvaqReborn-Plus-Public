@@ -50,9 +50,6 @@ public class OvaqReborn {
         info("HwidAuth successful!");
 
         //下のこれ動かなかったらごめん
-        ANTIDUMP = new AntiDumpManager();
-        AntiDumpManager.init();
-        info("AntiDump checking ...");
         info("preInit starting ...");
 
         EXECUTOR = Executors.newFixedThreadPool(1);
