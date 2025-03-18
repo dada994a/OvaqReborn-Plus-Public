@@ -11,9 +11,7 @@ public class ChangeLog {
     private static final List<ChangeLogEntry> changeLogs = new ArrayList<>();
 
     static {
-        changeLogs.add(new ChangeLogEntry(ChangeType.ADD, "UpdateCheckerを追加"));
-        changeLogs.add(new ChangeLogEntry(ChangeType.IMPROVE, "IRCに[VIP]などの表示を追加"));
-        changeLogs.add(new ChangeLogEntry(ChangeType.FIX,"Phase修正"));
+        changeLogs.add(new ChangeLogEntry(ChangeType.IMPROVE, "全部のovaqrebornの文字をPlusに変更"));
     }
 
     public static List<ChangeLogEntry> getChangeLogs() {
