@@ -12,8 +12,7 @@ public class ChatUtil implements Globals {
         if (mc != null && mc.inGameHud != null) {
             mc.inGameHud.getChatHud().addMessage(Text.of(PREFIX + message), null, null);
         }
-        }
-
+    }
 
     public static void clientSendMessage(String message, Object... params) {
         clientSendMessage(String.format(message, params));
