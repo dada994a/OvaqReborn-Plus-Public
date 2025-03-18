@@ -15,10 +15,6 @@ import net.shoreline.client.util.chat.ChatUtil;
  * @since 1.0
  */
 public class AntiCoordLeakModule extends ConcurrentModule {
-    private static final String WARNING_MESSAGE = "はいお前座標貼ろうとしたね。戦犯";
-    private static final String SERVER_ALERT_MESSAGE = "このメッセージはアホが座標を流出させようとしたことを示すメッセージです。 ｜ ᴼᵛᵃᵠᴿᵉᵇᵒʳⁿ⁺ ᴮᵉᵗᵃ";
-
-    private final Config<Boolean> alert = new BooleanConfig("Alert", "For Tikuwa", true);
 
     public AntiCoordLeakModule() {
         super("AntiCoordLeak", "For Tikuwa", ModuleCategory.MISC);
@@ -26,15 +22,11 @@ public class AntiCoordLeakModule extends ConcurrentModule {
 
     @EventListener
     public void onChatMessage(ChatMessageEvent.Client event) {
-        String message = event.getMessage().toLowerCase();
+        String message = event.getMessage();
 
         if (tikuwamoment(message)) {
             event.cancel();
-            ChatUtil.clientSendMessage(WARNING_MESSAGE);
-
-            if (alert.getValue()) {
-                ChatUtil.serverSendMessage(SERVER_ALERT_MESSAGE);
-            }
+            ChatUtil.clientSendMessage("はいお前座標貼ろうとしたね。戦犯");
         }
     }
 
