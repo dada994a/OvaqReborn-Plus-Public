@@ -53,7 +53,7 @@ public class ClientConfiguration implements Globals {
                     || !Files.isWritable(clientDir)) {
                 clientDir = runningDir;
             }
-            clientDir = clientDir.resolve("OvaqRebornPlus");
+            clientDir = clientDir.resolve("OvaqReborn Plus");
             // create client directory
             if (!Files.exists(clientDir)) {
                 try {
