@@ -5,6 +5,7 @@ import net.shoreline.client.util.discord.DiscordEventHandlers;
 import net.shoreline.client.util.discord.DiscordRPC;
 import net.shoreline.client.util.discord.DiscordRichPresence;
 
+
 public class DiscordManager {
     private static final DiscordRPC rpc = DiscordRPC.INSTANCE;
     private static DiscordRichPresence presence = new DiscordRichPresence();
@@ -34,11 +35,9 @@ public class DiscordManager {
     }
 
     private static void updatePresence() {
-        presence.state = getServerInfo();
+        presence.state = getServerInfo() + "\n UID: " + UIDManager.getUID();
         rpc.Discord_UpdatePresence(presence);
     }
-
-
 
     private static String getServerInfo() {
         MinecraftClient mc = MinecraftClient.getInstance();

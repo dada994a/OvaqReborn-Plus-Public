@@ -47,12 +47,9 @@ public class OvaqRebornPlus {
         Authenticator.hwidAuth();
         Moduletester.moduletest();
         info("HwidAuth successful!");
-
         UpdateChecker.checkUpdate();
         info("Update Checking ...");
-
         info("preInit starting ...");
-
         EXECUTOR = Executors.newFixedThreadPool(1);
         EVENT_HANDLER = new EventBus();
         info("init starting ...");

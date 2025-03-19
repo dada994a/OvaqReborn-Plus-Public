@@ -23,7 +23,7 @@ public class UIDManager {
             String line;
             while ((line = reader.readLine()) != null) {
                 if (line.contains(hwid)) {
-                    String[] parts = line.split("-");
+                    String[] parts = line.split("_");
                     if (parts.length > 1) {
                         return parts[1];
                     }

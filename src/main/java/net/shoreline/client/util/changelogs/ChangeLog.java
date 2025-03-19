@@ -11,8 +11,7 @@ public class ChangeLog {
     private static final List<ChangeLogEntry> changeLogs = new ArrayList<>();
 
     static {
-        changeLogs.add(new ChangeLogEntry(ChangeType.IMPROVE, "全部のovaqrebornの文字をPlusに変更"));
-        changeLogs.add(new ChangeLogEntry(ChangeType.FIX, "座標流出module多分直した"));
+        changeLogs.add(new ChangeLogEntry(ChangeType.IMPROVE, "RPCにuidを表示するように変更"));
     }
 
     public static List<ChangeLogEntry> getChangeLogs() {
