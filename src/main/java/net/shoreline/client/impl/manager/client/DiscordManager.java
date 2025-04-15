@@ -35,7 +35,6 @@ public class DiscordManager {
     }
 
     private static void updatePresence() {
-        presence.state = getServerInfo() + "\n UID: " + UIDManager.getUID();
         rpc.Discord_UpdatePresence(presence);
     }
 
