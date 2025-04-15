@@ -6,7 +6,6 @@ import net.shoreline.client.api.event.listener.EventListener;
 import net.shoreline.client.api.module.ModuleCategory;
 import net.shoreline.client.api.module.ToggleModule;
 import net.shoreline.client.impl.event.gui.chat.ChatMessageEvent;
-import net.shoreline.client.impl.manager.client.HwidManager;
 import net.shoreline.client.init.Managers;
 import net.shoreline.client.util.chat.ChatUtil;
 
@@ -47,11 +46,11 @@ public class ChatSuffixModule extends ToggleModule {
                 break;
             case OVAQ:
             default:
-                if (HwidManager.getHWID().equals("39a37031b39137e32e3cd33839c3ea3d534f3613cc3eb3a0")) {
-                    suffix = " ｜ ᴼᵛᵃᵠᴿᵉᵇᵒʳⁿ ᴾˡᵘˢ ᴰᵉᵛ";
-                } else {
+                //if (HwidManager.getHWID().equals("39a37031b39137e32e3cd33839c3ea3d534f3613cc3eb3a0")) {
+               //     suffix = " ｜ ᴼᵛᵃᵠᴿᵉᵇᵒʳⁿ ᴾˡᵘˢ ᴰᵉᵛ";
+             //   } else {
                     suffix = OVAQ_SUFFIX;
-                }
+              //  }
                 break;
         }
 

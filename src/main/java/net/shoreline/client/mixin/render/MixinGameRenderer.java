@@ -47,7 +47,7 @@ public class MixinGameRenderer implements Globals {
         OvaqRebornPlus.EVENT_HANDLER.dispatch(renderWorldEvent);
     }
 
-    @Inject(method = "updateTargetedEntity", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/profiler/Profiler;push(Ljava/lang/String;)V", shift = At.Shift.AFTER))
+    @Inject(method = "updateTargetedEntity", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/profiler/Profiler;push(Ljava/lang/String;)V", shift = At.Shift.AFTER ) )
     private void hookUpdateTargetedEntity$1(final float tickDelta, final CallbackInfo info) {
         UpdateCrosshairTargetEvent event = new UpdateCrosshairTargetEvent(tickDelta, client.getCameraEntity());
         OvaqRebornPlus.EVENT_HANDLER.dispatch(event);
@@ -121,7 +121,7 @@ public class MixinGameRenderer implements Globals {
                     "(Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/" +
                     "Vec3d;Lnet/minecraft/util/math/Vec3d;Lnet/minecraft/util/" +
                     "math/Box;Ljava/util/function/Predicate;D)Lnet/minecraft/" +
-                    "util/hit/EntityHitResult;"), cancellable = true)
+                    "util/hit/EntityHitResult;"), cancellable = true )
     private void hookUpdateTargetedEntity$2(float tickDelta, CallbackInfo info) {
         TargetEntityEvent targetEntityEvent = new TargetEntityEvent();
         OvaqRebornPlus.EVENT_HANDLER.dispatch(targetEntityEvent);

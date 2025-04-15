@@ -1,5 +1,5 @@
-## OvaqReborn-NG
-### Minecraft Utility Mod
+## OvaqReborn-Plus-public
+###  No updates
 
 ##
 - Minecraft version **```Fabric 1.20.4```**
@@ -12,8 +12,10 @@
 ### Dev
 - ハイピの廃人
 
+Thanks To Rom And good bye.
+
 ## License
-Copyright © 2P2FJP Development Team 2024
+Copyright © 2P2FJP Development Team 2024-2025
 GNU General Public License version 3
 ## Credits
 - [Alien](https://github.com/iM4dCat/Alien)

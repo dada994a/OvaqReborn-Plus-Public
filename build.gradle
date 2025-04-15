@@ -26,9 +26,9 @@ sourceSets.main.java.srcDirs += "build/gen/buildconfig/src/main"
 
 loom {
     accessWidenerPath = file("src/main/resources/ovaqreborn.accesswidener")
-   // mixin {
-//       defaultRefmapName = "ovaqreborn.refmap.json"
-  //  }
+    mixin {
+        defaultRefmapName.set("mixins.ovaqreborn.refmap.json")
+    }
 }
 
 configurations {

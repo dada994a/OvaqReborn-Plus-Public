@@ -10,8 +10,6 @@ import net.shoreline.client.impl.manager.client.UpdateChecker;
 import net.shoreline.client.impl.module.client.IRCModule;
 import net.shoreline.client.init.Managers;
 import net.shoreline.client.init.Modules;
-import net.shoreline.client.init.Moduletester;
-import net.shoreline.client.security.Authenticator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -44,11 +42,8 @@ public class OvaqRebornPlus {
         LOGGER = LogManager.getLogger("OvaqReborn Plus");
         logAsciiArt();
 
-        Authenticator.hwidAuth();
-        Moduletester.moduletest();
-        info("HwidAuth successful!");
-        UpdateChecker.checkUpdate();
-        info("Update Checking ...");
+       // UpdateChecker.checkUpdate();
+       // info("Update Checking ...");
         info("preInit starting ...");
         EXECUTOR = Executors.newFixedThreadPool(1);
         EVENT_HANDLER = new EventBus();

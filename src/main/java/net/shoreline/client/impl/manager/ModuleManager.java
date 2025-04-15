@@ -84,8 +84,6 @@ public class ModuleManager {
                 //new AntiAFKModule(),
                 new AntiAimModule(),
                 new AntiCoordLeakModule(),
-
-
                 new ChatSuffixModule(),
                 new AntiSpamModule(),
                 new AutoAcceptModule(),

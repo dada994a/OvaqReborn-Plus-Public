@@ -15,7 +15,7 @@ import net.shoreline.client.impl.manager.player.rotation.RotationManager;
 import net.shoreline.client.impl.manager.world.WaypointManager;
 import net.shoreline.client.impl.manager.world.sound.SoundManager;
 import net.shoreline.client.impl.manager.world.tick.TickManager;
-import net.shoreline.client.security.Authenticator;
+
 
 /**
  * @author OvaqRebornPlus
@@ -54,7 +54,6 @@ public class Managers {
      * @see #isInitialized()
      */
     public static void init() {
-        Authenticator.hwidAuth();
         if (!isInitialized()) {
             NETWORK = new NetworkManager();
             MODULE = new ModuleManager();

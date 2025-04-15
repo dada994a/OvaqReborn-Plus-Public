@@ -1,6 +1,5 @@
 {
   "required": true,
-  "priority": 100,
   "package": "net.shoreline.client.mixin",
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_17",
@@ -110,5 +109,6 @@
   ],
   "injectors": {
     "defaultRequire": 1
-  }
+  },
+  "refmap": "mixins.ovaqreborn.refmap.json"
 }
